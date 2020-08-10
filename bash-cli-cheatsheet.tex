@@ -1,0 +1,209 @@
+%%
+%% This document was adapted from the Cheatsheet LaTeX Template by Michael Müller and Vel.
+%% See following comment for information and licensing.
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cheatsheet
+% LaTeX Template
+% Version 1.0 (12/12/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Michael Müller (https://github.com/cmichi/latex-template-collection) with
+% extensive modifications by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt,letterpaper]{extarticle} % extarticle allows non-standard font sizes
+\RequirePackage{lmodern}
+%\RequirePackage[default]{sourcecodepro}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage[margin=0pt,landscape]{geometry} % Page margins and orientation
+
+\RequirePackage{microtype}%\frenchspacing
+\RequirePackage{ragged2e}
+\RaggedRight
+
+\RequirePackage{enumitem}
+
+
+
+\usepackage{graphicx} % Required for including images
+
+\usepackage{color} % Required for color customization
+\definecolor{mygray}{gray}{.75} % Custom color
+
+\usepackage{url} % Required for the \url command to easily display URLs
+
+\usepackage[ % This block contains information used to annotate the PDF
+colorlinks=false,
+pdftitle={BASH CLI Cheatsheet},
+pdfauthor={Gene Johannsen},
+pdfsubject={Compilation of useful shortcuts},
+pdfkeywords={Random Software, Cheatsheet}
+]{hyperref}
+
+\setlength{\unitlength}{1mm} % Set the length that numerical units are measured in
+\setlength{\parindent}{0pt} % Stop paragraph indentation
+
+\renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
+
+\newcommand{\command}[2]{#1~\dotfill{}~#2\\} % Custom command for adding a shorcut
+
+\newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\} % Custom command for subsection titles
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{picture}(297,210) % Create a container for the page content
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\put(10,200){ % Position on the page to put the title
+\begin{minipage}[t]{210mm} % The size and alignment of the title
+\section*{BASH CLI Cheatsheet} % Title
+\end{minipage}
+}
+
+%----------------------------------------------------------------------------------------
+%	FIRST COLUMN SPECIFICATION
+%----------------------------------------------------------------------------------------
+
+\put(10,190){ % Divide the page
+\begin{minipage}[t]{90mm} % Create a box to house text
+
+%----------------------------------------------------------------------------------------
+%	HEADING ONE
+%----------------------------------------------------------------------------------------
+\sectiontitle{Notation}
+\begin{itemize}[nosep,leftmargin=*]
+\item C-* means hold Control key and press the character.
+\item M-* means hold the Meta key (Alt) and press the character.
+\end{itemize}
+
+\sectiontitle{Bare Essentials}
+\command{C-b}{Move back one character}
+\command{C-f}{Move forward one character}
+\command{DEL or Backspace}{Delete the character to the left of the cursor}
+\command{C-d}{Delete the character underneath the cursor}
+
+%----------------------------------------------------------------------------------------
+%	HEADING TWO
+%----------------------------------------------------------------------------------------
+
+\sectiontitle{Movement Commands}
+
+\command{C-a}{Move to the start of the line}
+\command{C-e}{Move to the end of the line}
+\command{M-f}{Move forward a word, where a word is composed of letters and digits}
+\command{M-b}{Move backward a word}
+\command{C-l}{Clear the screen, reprinting the current line at the top}
+
+%----------------------------------------------------------------------------------------
+%	HEADING THREE
+%----------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the first column of text
+} % End the first division of the page
+
+%----------------------------------------------------------------------------------------
+%	SECOND COLUMN SPECIFICATION
+%----------------------------------------------------------------------------------------
+
+\put(105,190){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house text
+
+%----------------------------------------------------------------------------------------
+%	HEADING FOUR
+%----------------------------------------------------------------------------------------
+
+\sectiontitle{Killing Commands}
+
+\command{C-k}{Kill the text from the current cursor position to the end of the line}
+\command{M-d}{Kill from the cursor to the end of the current word, or, if between words, to the end of the next word. Word boundaries are the same as those used by M-f}
+\command{M-DEL}{Kill from the cursor the start of the current word, or, if between words, to the start of the previous word. Word boundaries are the same as those used by M-b}
+\command{C-w}{Kill from the cursor to the previous whitespace. This is different than M-DEL because the word boundaries differ}
+
+Here is how to yank the text back into the line. Yanking means to copy the most-recently-killed text from the kill buffer. \\
+
+\command{C-y}{Yank the most recently killed text back into the buffer at the cursor}
+\command{M-y}{Rotate the kill-ring, and yank the new top. You can only do this if the prior command is C-y or M-y}
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the second column of text
+} % End the second division of the page
+
+%----------------------------------------------------------------------------------------
+%	THIRD COLUMN SPECIFICATION
+%----------------------------------------------------------------------------------------
+
+\put(200,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house tex
+
+%----------------------------------------------------------------------------------------
+%	IMPORTANT FILES
+%----------------------------------------------------------------------------------------
+
+\sectiontitle{Important files}
+
+\texttt{/.config/awesome/rc.lua}
+
+\texttt{/etc/xdg/awesome/rc.lua}
+
+\vspace{\baselineskip} % Whitespace before the next section
+
+%----------------------------------------------------------------------------------------
+%	LINKS AND INFORMATION
+%----------------------------------------------------------------------------------------
+
+\sectiontitle{Links and information}
+
+\url{http://awesome.naquadah.org/}
+
+\url{http://awesome.naquadah.org/wiki/}
+
+%----------------------------------------------------------------------------------------
+%	FOOTNOTE
+%----------------------------------------------------------------------------------------
+
+\vspace{\baselineskip}
+\linethickness{0.5mm} % Thickness of the footer line
+{\color{mygray}\line(1,0){30}} % Print the line with a custom color
+
+\footnotesize{
+Created by John Smith, 2015\\
+\url{http://johnsmith.com/}\\
+
+Released under the MIT license.
+}
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the third column of text
+} % End the third division of the page
+\end{picture} % End the container for the entire page
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
