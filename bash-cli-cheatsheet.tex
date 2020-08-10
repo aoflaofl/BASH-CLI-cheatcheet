@@ -33,12 +33,9 @@
 \usepackage[margin=0pt,landscape]{geometry} % Page margins and orientation
 
 \RequirePackage{microtype}%\frenchspacing
-\RequirePackage{ragged2e}
-\RaggedRight
+%\RequirePackage{ragged2e}\RaggedRight
 
 \RequirePackage{enumitem}
-
-
 
 \usepackage{graphicx} % Required for including images
 
@@ -60,7 +57,7 @@ pdfkeywords={Random Software, Cheatsheet}
 
 \renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
 
-\newcommand{\command}[2]{#1~\dotfill{}~#2\\} % Custom command for adding a shorcut
+\newcommand{\command}[2]{\texttt{#1}~\dotfill{}~#2\\} % Custom command for adding a shorcut
 
 \newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\} % Custom command for subsection titles
 
@@ -76,7 +73,7 @@ pdfkeywords={Random Software, Cheatsheet}
 
 \put(10,200){ % Position on the page to put the title
 \begin{minipage}[t]{210mm} % The size and alignment of the title
-\section*{BASH CLI Cheatsheet} % Title
+\section*{bash CLI Cheatsheet} % Title
 \end{minipage}
 }
 
@@ -90,36 +87,34 @@ pdfkeywords={Random Software, Cheatsheet}
 %----------------------------------------------------------------------------------------
 %	HEADING ONE
 %----------------------------------------------------------------------------------------
-\sectiontitle{Notation}
-\begin{itemize}[nosep,leftmargin=*]
-\item C-* means hold Control key and press the character.
-\item M-* means hold the Meta key (Alt) and press the character.
-\end{itemize}
 
-\sectiontitle{Bare Essentials}
-\command{C-b}{Move back one character}
-\command{C-f}{Move forward one character}
+\sectiontitle{Notation}
+\command{C-*}{hold Control key and press the character.}
+\command{M-*}{hold the Meta key (Alt) and press the character.}
+
+\sectiontitle{Commands for Moving}
+\command{C-a}{Move to the start of the current line.}
+\command{C-e}{Move to the end of the line.}
+\command{C-f}{Move forward a character.}
+\command{C-b}{Move back a character.}
+\command{M-f}{Move forward to the end of the next word.}
+\command{M-b}{Move back to the start of the current or previous word.}
+\command{C-l}{Clear the screen leaving the current line at the top of the screen.}
 \command{DEL or Backspace}{Delete the character to the left of the cursor}
-\command{C-d}{Delete the character underneath the cursor}
 
 %----------------------------------------------------------------------------------------
 %	HEADING TWO
 %----------------------------------------------------------------------------------------
 
-\sectiontitle{Movement Commands}
-
-\command{C-a}{Move to the start of the line}
-\command{C-e}{Move to the end of the line}
-\command{M-f}{Move forward a word, where a word is composed of letters and digits}
-\command{M-b}{Move backward a word}
-\command{C-l}{Clear the screen, reprinting the current line at the top}
-
-%----------------------------------------------------------------------------------------
-%	HEADING THREE
-%----------------------------------------------------------------------------------------
-
-
-
+\sectiontitle{Commands for Changing Text}
+\command{C-d}{Delete the character at point.}
+\command{C-v}{Add the next character typed to the line verbatim.}
+\command{C-v TAB}{Insert a tab character.}
+\command{C-t}{Drag  the  character before point forward over the character at point, moving point forward as well.  If point is at the end of the line, then this transposes the two characters before point.  Negative arguments have no effect.}
+\command{M-t}{Drag the word before point past the word after point, moving point over that word as well.  If point is at the end of the line, this transposes the last two words on the line.}
+\command{M-u}{Uppercase the current (or following) word.  With a negative argument, uppercase the previous word, but do not move point.}
+\command{M-l}{Lowercase the current (or following) word.  With a negative argument, lowercase the previous word, but do not move point.}
+\command{M-c}{Capitalize the current (or following) word.  With a negative argument, capitalize the previous word, but do not move point.}
 
 %----------------------------------------------------------------------------------------
 
