@@ -33,7 +33,7 @@
 \usepackage[margin=0pt,landscape]{geometry} % Page margins and orientation
 
 \RequirePackage{microtype}%\frenchspacing
-%\RequirePackage{ragged2e}\RaggedRight
+\RequirePackage{ragged2e}
 
 \RequirePackage{enumitem}
 
@@ -57,9 +57,9 @@ pdfkeywords={Random Software, Cheatsheet}
 
 \renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
 
-\newcommand{\command}[2]{\texttt{#1}~\dotfill{}~#2\\} % Custom command for adding a shorcut
+\newcommand{\command}[2]{\texttt{#1}~\dotfill{}~{\RaggedLeft #2\par}} % Custom command for adding a shorcut
 
-\newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\} % Custom command for subsection titles
+\newcommand{\sectiontitle}[1]{\bigskip\paragraph{#1} \ \\} % Custom command for subsection titles
 
 %----------------------------------------------------------------------------------------
 
@@ -82,25 +82,25 @@ pdfkeywords={Random Software, Cheatsheet}
 %----------------------------------------------------------------------------------------
 
 \put(10,190){ % Divide the page
-\begin{minipage}[t]{90mm} % Create a box to house text
+\begin{minipage}[t]{70mm} % Create a box to house text
 
 %----------------------------------------------------------------------------------------
 %	HEADING ONE
 %----------------------------------------------------------------------------------------
 
 \sectiontitle{Notation}
-\command{C-*}{hold Control key and press the character.}
-\command{M-*}{hold the Meta key (Alt) and press the character.}
+\command{C-*}{Hold Control key and \\ press the character.}
+\command{M-*}{Hold the Meta key and \\ press the character.}
 
 \sectiontitle{Commands for Moving}
 \command{C-a}{Move to the start of the current line.}
 \command{C-e}{Move to the end of the line.}
 \command{C-f}{Move forward a character.}
 \command{C-b}{Move back a character.}
-\command{M-f}{Move forward to the end of the next word.}
-\command{M-b}{Move back to the start of the current or previous word.}
-\command{C-l}{Clear the screen leaving the current line at the top of the screen.}
-\command{DEL or Backspace}{Delete the character to the left of the cursor}
+\command{M-f}{Move forward to the end \\ of the next word.}
+\command{M-b}{Move back to the start of the \\ current or previous word.}
+\command{C-l}{Clear the screen leaving the current \\ line at the top of the screen.}
+\command{DEL or Backspace}{Delete the character to \\ the left of the cursor}
 
 %----------------------------------------------------------------------------------------
 %	HEADING TWO
@@ -108,7 +108,7 @@ pdfkeywords={Random Software, Cheatsheet}
 
 \sectiontitle{Commands for Changing Text}
 \command{C-d}{Delete the character at point.}
-\command{C-v}{Add the next character typed to the line verbatim.}
+\command{C-v}{Add the next character typed \\ to the line verbatim.}
 \command{C-v TAB}{Insert a tab character.}
 \command{C-t}{Drag  the  character before point forward over the character at point, moving point forward as well.  If point is at the end of the line, then this transposes the two characters before point.  Negative arguments have no effect.}
 \command{M-t}{Drag the word before point past the word after point, moving point over that word as well.  If point is at the end of the line, this transposes the last two words on the line.}
