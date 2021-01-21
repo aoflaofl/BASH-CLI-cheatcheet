@@ -24,9 +24,11 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[9pt,letterpaper]{extarticle} % extarticle allows non-standard font sizes
-\RequirePackage{lmodern}
-%\RequirePackage[default]{sourcecodepro}
+\documentclass[11pt,letterpaper]{extarticle} % extarticle allows non-standard font sizes
+%\RequirePackage{lmodern}
+\RequirePackage{tgtermes}
+%\usepackage{noto}
+\RequirePackage{sourcecodepro}
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
@@ -57,7 +59,7 @@ pdfkeywords={Random Software, Cheatsheet}
 
 \renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
 
-\newcommand{\command}[2]{\texttt{#1}~\dotfill{}~{\RaggedLeft #2\par}} % Custom command for adding a shorcut
+\newcommand{\command}[2]{{\ttfamily\bfseries #1}~\dotfill{}~{\rmfamily\RaggedLeft #2\par}} % Custom command for adding a shorcut
 
 \newcommand{\sectiontitle}[1]{\bigskip\paragraph{#1} \ \\} % Custom command for subsection titles
 
@@ -81,7 +83,7 @@ pdfkeywords={Random Software, Cheatsheet}
 %	FIRST COLUMN SPECIFICATION
 %----------------------------------------------------------------------------------------
 
-\put(10,190){ % Divide the page
+\put(10,200){ % Divide the page
 \begin{minipage}[t]{70mm} % Create a box to house text
 
 %----------------------------------------------------------------------------------------
@@ -89,17 +91,17 @@ pdfkeywords={Random Software, Cheatsheet}
 %----------------------------------------------------------------------------------------
 
 \sectiontitle{Notation}
-\command{C-*}{Hold Control key and \\ press the character.}
-\command{M-*}{Hold the Meta key and \\ press the character.}
+\command{C-*}{Hold Control key and \\ press the character}
+\command{M-*}{Hold the Meta key and \\ press the character}
 
 \sectiontitle{Commands for Moving}
-\command{C-a}{Move to the start of the current line.}
-\command{C-e}{Move to the end of the line.}
-\command{C-f}{Move forward a character.}
-\command{C-b}{Move back a character.}
-\command{M-f}{Move forward to the end \\ of the next word.}
-\command{M-b}{Move back to the start of the \\ current or previous word.}
-\command{C-l}{Clear the screen leaving the current \\ line at the top of the screen.}
+\command{C-a}{Move to the start of the current line}
+\command{C-e}{Move to the end of the line}
+\command{C-f}{Move forward a character}
+\command{C-b}{Move back a character}
+\command{M-f}{Move forward to the end \\ of the next word}
+\command{M-b}{Move back to the start of the \\ current or previous word}
+\command{C-l}{Clear the screen leaving the current \\ line at the top of the screen}
 \command{DEL or Backspace}{Delete the character to \\ the left of the cursor}
 
 %----------------------------------------------------------------------------------------
@@ -110,8 +112,8 @@ pdfkeywords={Random Software, Cheatsheet}
 \command{C-d}{Delete the character at point.}
 \command{C-v}{Add the next character typed \\ to the line verbatim.}
 \command{C-v TAB}{Insert a tab character.}
-\command{C-t}{Drag  the  character before point forward over the character at point, moving point forward as well.  If point is at the end of the line, then this transposes the two characters before point.  Negative arguments have no effect.}
-\command{M-t}{Drag the word before point past the word after point, moving point over that word as well.  If point is at the end of the line, this transposes the last two words on the line.}
+\command{C-t}{Transpose two characters.}
+\command{M-t}{Transpose two words.}
 \command{M-u}{Uppercase the current (or following) word.  With a negative argument, uppercase the previous word, but do not move point.}
 \command{M-l}{Lowercase the current (or following) word.  With a negative argument, lowercase the previous word, but do not move point.}
 \command{M-c}{Capitalize the current (or following) word.  With a negative argument, capitalize the previous word, but do not move point.}
@@ -178,6 +180,8 @@ Here is how to yank the text back into the line. Yanking means to copy the most-
 
 \url{http://awesome.naquadah.org/wiki/}
 
+READLINE section of \texttt{bash} man page
+
 %----------------------------------------------------------------------------------------
 %	FOOTNOTE
 %----------------------------------------------------------------------------------------
@@ -187,8 +191,8 @@ Here is how to yank the text back into the line. Yanking means to copy the most-
 {\color{mygray}\line(1,0){30}} % Print the line with a custom color
 
 \footnotesize{
-Created by John Smith, 2015\\
-\url{http://johnsmith.com/}\\
+Created by Gene Johannsen, 2020\\
+%% \url{http://johnsmith.com/}\\
 
 Released under the MIT license.
 }
